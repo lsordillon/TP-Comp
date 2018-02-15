@@ -2,7 +2,7 @@
 
 #include <string>
 #include "symbole.h"
-using namespace std;
+using namespace std; 
 
 class Lexer {
 

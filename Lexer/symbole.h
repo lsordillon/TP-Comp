@@ -16,7 +16,7 @@ class Symbole {
 
    protected:
       int ident;
-};
+}; 
 
 class Entier : public Symbole {
    public:
