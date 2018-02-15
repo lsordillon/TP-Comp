@@ -1,5 +1,7 @@
 #pragma once
 
+//class Etat;
+
 #include <string>
 #include "symbole.h"
 //#include "etat.h"

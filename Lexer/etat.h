@@ -1,5 +1,7 @@
 #pragma once
 
+//class Automate;
+
 #include <string>
 #include "symbole.h"
 #include "automate.h"
