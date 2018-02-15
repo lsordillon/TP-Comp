@@ -14,7 +14,7 @@ else
 endif
 
 #Nom de l'executable
-EXEC=CaVaMarcher
+EXEC=CaVaMarcher.exe
 
 #Fichiers sources
 SRC=$(wildcard *.cpp ) #prendre tous les fichiers .cpp
@@ -31,7 +31,7 @@ all : $(EXEC)
 	$(CXX) $^ -o $@ -c $(CXXFLAGS)
 
 #Fabrication de l'executable
-CaVaMarcher : $(OBJ)
+CaVaMarcher.exe : $(OBJ)
 	$(CXX) $^ -o $@ $(LDFLAGS)
 
 clean :
