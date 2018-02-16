@@ -3,7 +3,7 @@
 
 
 #include <string>
-#include <stack>
+#include <deque>
 #include "symbole.h"
 #include "etat.h"
 
@@ -19,8 +19,8 @@ class Automate {
       void reduction( int n, Symbole * s);
 
    protected:
-    stack <Symbole> symbolestack;
-    stack <Etat> etatstack;
+    deque <Symbole *> symbolestack;
+    deque <Etat *> etatstack;
     
 };
 
