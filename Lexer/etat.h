@@ -1,10 +1,12 @@
 #pragma once
 
-//class Automate;
+
 
 #include <string>
 #include "symbole.h"
-#include "automate.h"
+//#include "automate.h"
+
+class Automate;
 
 using namespace std;
 

@@ -1,10 +1,11 @@
 #pragma once
 
-//class Etat;
+
 
 #include <string>
+#include <stack>
 #include "symbole.h"
-//#include "etat.h"
+#include "etat.h"
 
 using namespace std;
 
@@ -14,11 +15,12 @@ class Automate {
       Automate() { }
       ~Automate() { }
       
-      //void decalage(Symbole * s, Etat * e);
+      void decalage(Symbole * s, Etat * e);
       void reduction( int n, Symbole * s);
 
    protected:
-   int t; 
+    stack <Symbole> symbolestack;
+    stack <Etat> etatstack;
     
 };
 
