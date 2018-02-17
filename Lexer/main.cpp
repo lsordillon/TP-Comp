@@ -14,5 +14,11 @@ int main(void) {
       l.Avancer();
    }
    return 0;
+    
+    
+    //Lit notre symbole s
+    //regarde l'état actuel E? en haut de la pile de l'automate a
+    //Lance E?::transition(s,a)
+    // lit un nouvel élément
 }
 
