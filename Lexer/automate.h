@@ -17,6 +17,8 @@ class Automate {
       
       void decalage(Symbole * s, Etat * e);
       void reduction( int n, Symbole * s);
+      Symbole * getSymbole();
+      Etat * getEtat();
 
    protected:
     deque <Symbole *> symbolestack;
