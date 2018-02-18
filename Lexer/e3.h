@@ -3,18 +3,16 @@
 #include <string>
 #include "symbole.h"
 #include "etat.h"
-#include "e2.h"
-#include "e3.h"
 #include "automate.h"
 
 
 using namespace std;
 
-class E5 : public Etat{
+class E3 : public Etat{
 
    public:
-      E5() : Etat("E5") { }
-      ~E5() { }
+      E3() : Etat("E3") { }
+      ~E3() { }
       
       bool transition(Automate & automate, Symbole * s);
 };

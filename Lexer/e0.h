@@ -4,6 +4,7 @@
 #include "symbole.h"
 #include "etat.h"
 #include "e1.h"
+#include "e2.h"
 #include "automate.h"
 
 
