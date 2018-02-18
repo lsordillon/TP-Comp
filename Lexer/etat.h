@@ -2,7 +2,6 @@
 
 #include <string>
 #include "symbole.h"
-//#include "automate.h"
 
 class Automate;
 
