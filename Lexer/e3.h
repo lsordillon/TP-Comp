@@ -3,6 +3,7 @@
 #include <string>
 #include "symbole.h"
 #include "etat.h"
+#include "e1.h"
 #include "automate.h"
 
 

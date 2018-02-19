@@ -16,8 +16,9 @@ class Automate {
       ~Automate() { }
       
       void decalage(Symbole * s, Etat * e);
-      void reduction( int n, Symbole * s);
-      Symbole * getSymbole();
+      void reduction( int n);
+      void destroySymbole();
+      Symbole * getAndDestroySymbole();
       Etat * getEtat();
 
    protected:

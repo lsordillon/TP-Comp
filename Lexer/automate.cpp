@@ -6,16 +6,22 @@ void Automate::decalage(Symbole * s, Etat * e){
 	etatstack.push_back(e);
 }
 
-void Automate::reduction(int n, Symbole * s){
+/**
+ *Réalise la fin de la reduction
+ *on supprime les n états a supprimer
+ */
+void Automate::reduction(int n){
     for(int i=0; i<n;i++){
-        symbolestack.pop_back();
         etatstack.pop_back();
     }
-    symbolestack.push_back(s);
 }
 
-Symbole * Automate::getSymbole (){
+void Automate::destroySymbole(){
+    symbolestack.pop_back();
+}
+Symbole * Automate::getAndDestroySymbole (){
     Symbole * s = symbolestack.back();
+    symbolestack.pop_back();
     return s;
 }
 
