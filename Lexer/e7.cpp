@@ -6,9 +6,20 @@ bool E7::transition(Automate & automate, Symbole * s) {
         case MULT :
         automate.decalage(s,new E5);
         break;
+        default :
+            Symbole * s1=automate.getAndDestroySymbole();
+            automate.destroySymbole();
+            Symbole * s2=automate.getAndDestroySymbole();
+            automate.reduction(3);
+            
+            Etat * e = automate.getDecalageNonTerminaux();
+            Symbole * newS = s1->Addition(s2);
+            automate.decalage(newS,e);
+            e->transition(automate,s);
+            break;
 
 		
-        //Cas reduction --> R2
+        
         // Gestion des erreurs ? 
 	}
 	return false;

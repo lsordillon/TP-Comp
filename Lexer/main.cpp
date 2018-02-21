@@ -1,9 +1,11 @@
 #include <iostream>
 #include "lexer.h"
+#include "automate.h"
+#include "etat.h"
 
 
 int main(void) {
-   string chaine("(1+34)*123");
+  string chaine("(1+34)*123");
 
    Lexer l(chaine); 
 
@@ -13,6 +15,22 @@ int main(void) {
       cout<<endl;
       l.Avancer();
    }
+    
+    //Tentative de lecture sur un élément
+   /*string chaine("22");
+    Automate * a = new Automate();
+    a->init();
+    
+    Lexer l(chaine);
+    
+    Symbole * s;
+    s->Affiche();
+    cout<<endl;
+    
+    Etat * etatActuel = a->getEtat();
+    etatActuel->transition(*a,s);*/
+    
+    
    return 0;
     
     

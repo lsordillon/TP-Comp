@@ -1,6 +1,10 @@
 #include "automate.h"
 #include <iostream>
 
+void Automate::init() {
+    etatstack.push_back(new E0);
+}
+
 void Automate::decalage(Symbole * s, Etat * e){
 	symbolestack.push_back(s);
 	etatstack.push_back(e);
@@ -28,4 +32,25 @@ Symbole * Automate::getAndDestroySymbole (){
 Etat * Automate::getEtat (){
     Etat * e = etatstack.back();
     return e;
+}
+
+/**
+ * Dans le cas d'une reduction, pour ne pas tourner en rond, on doit réaliser un decalage correspondant à la colonne Non Terminaux
+ *Ce décalage dépend de l'état actuel (apres la suppression necessaire)
+ */
+Etat * Automate::getDecalageNonTerminaux(){
+    Etat * e = etatstack.back();
+    string nom = e->getNom();
+    if (nom.compare("E0")){
+        return new E1();
+    }
+    else if (nom.compare("E2")){
+        return new E6();
+    }
+    else if (nom.compare("E4")){
+        return new E7();
+    }
+    else{
+        return new E8();
+    }
 }

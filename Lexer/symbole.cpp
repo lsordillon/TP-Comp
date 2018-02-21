@@ -10,11 +10,31 @@ void Entier::Affiche() {
    cout<<"("<<valeur<<")";
 }
 
-/*Entier * Entier::Addition(Entier e1, Entier e2){
-    int v1 =e1.valeur;
-    int v2 =e2.valeur;
+/**
+ *Se charge de l'addition de 2 entier et renvoie le symbole correspondant
+ * !! PAS FINI !!
+ * techniquement ça devrait être uniquement des entiers, car il faut acceder a leur valeur. J'arrive pas a gérer l'héritage Symbole Entier pour l'instant 
+ *(appeler dans E7)
+ */
+Symbole * Symbole::Addition(Symbole * e2){
+    /*int v1 =this->valeur;
+    int v2 =e2->valeur;
     int v3 = v1+v2;
-    Entier e3 = new Entier(v3);
-    return e3;
-}*/
+    //Entier e3 = new Entier(v3);*/
+    return e2;
+}
+
+/**
+ *Se charge du produit de 2 entier et renvoie le symbole correspondant
+ * !! PAS FINI !!
+ *a faire sur le même schema de addition
+ *appeler dans E8
+ */
+Symbole * Symbole::Multiplication(Symbole * e2){
+   /* int v1 =this->valeur;
+    int v2 =e2->valeur;
+    int v3 = v1*v2;
+    //Entier e3 = new Entier(v3);*/
+    return e2;
+}
 

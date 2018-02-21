@@ -14,7 +14,8 @@ class Etat {
       ~Etat() { }
       
       virtual bool transition(Automate & automate, Symbole * s) = 0;
-      void Print() const; 
+      void Print() const;
+    string getNom();
 
    protected:
       string nom;
