@@ -5,7 +5,7 @@
 
 
 int main(void) {
-  string chaine("(1+34)*123");
+  /*string chaine("(1+34)*123");
 
    Lexer l(chaine); 
 
@@ -14,21 +14,24 @@ int main(void) {
       s->Affiche();
       cout<<endl;
       l.Avancer();
-   }
+   }*/
     
     //Tentative de lecture sur un élément
-   /*string chaine("22");
+   string chaine("22");
     Automate * a = new Automate();
     a->init();
+    cout<<endl;
     
     Lexer l(chaine);
     
     Symbole * s;
+    s=l.Consulter();
     s->Affiche();
     cout<<endl;
     
     Etat * etatActuel = a->getEtat();
-    etatActuel->transition(*a,s);*/
+    cout<<endl;
+    etatActuel->transition(*a,s);
     
     
    return 0;

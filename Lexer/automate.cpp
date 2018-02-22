@@ -3,11 +3,17 @@
 
 void Automate::init() {
     etatstack.push_back(new E0);
+    cout<<"Automate créé et init";
 }
 
 void Automate::decalage(Symbole * s, Etat * e){
 	symbolestack.push_back(s);
 	etatstack.push_back(e);
+    
+    cout<<"Je modifie les piles"<<endl;
+    etatstack.back()->Print();
+    symbolestack.back()->Affiche();
+    cout<<"Modification terminée"<<endl;
 }
 
 /**
@@ -31,6 +37,7 @@ Symbole * Automate::getAndDestroySymbole (){
 
 Etat * Automate::getEtat (){
     Etat * e = etatstack.back();
+    e->Print();
     return e;
 }
 
