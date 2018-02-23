@@ -17,7 +17,7 @@ int main(void) {
    }*/
     
     //Tentative de lecture sur un élément
-   string chaine("1+5*2");
+   string chaine("(5+*+2*2)*2");
     Automate * a = new Automate();
     a->init();
     cout<<endl;

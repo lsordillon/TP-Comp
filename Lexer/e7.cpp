@@ -7,9 +7,9 @@ bool E7::transition(Automate & automate, Symbole * s) {
         automate.decalage(s,new E5);
         break;
         default :
-            Symbole * s1=automate.getAndDestroySymbole();
+            Entier * s1=(Entier*) automate.getAndDestroySymbole();
             automate.destroySymbole();
-            Symbole * s2=automate.getAndDestroySymbole();
+            Entier * s2=(Entier*) automate.getAndDestroySymbole();
             automate.reduction(3);
             
             Etat * e = automate.getDecalageNonTerminaux();
