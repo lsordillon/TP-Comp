@@ -9,6 +9,9 @@ bool E1::transition(Automate & automate, Symbole * s) {
 		case MULT :
 		automate.decalage(s,new E5);
 		break;
+        case FIN :
+            cout<<"TERMINE"<<endl;
+            break;
         //Cas accepter / fin ?
         // Gestion des erreurs ? 
 	}

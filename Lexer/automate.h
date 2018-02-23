@@ -25,6 +25,7 @@ class Automate {
       void reduction( int n);
       void destroySymbole();
       Symbole * getAndDestroySymbole();
+    void Resultat ();
       Etat * getEtat();
       Etat * getDecalageNonTerminaux();
     

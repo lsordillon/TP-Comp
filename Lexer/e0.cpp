@@ -6,7 +6,10 @@ bool E0::transition(Automate & automate, Symbole * s) {
         case OPENPAR :
         automate.decalage(s,new E2);
         break;
-	// Cas id --> E3
+        case INT :
+        automate.decalage(s,new E3);
+        break;
+	
     //cas non terminaux --> E1
     // gestion des cas d'erreur
 	}

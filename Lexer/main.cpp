@@ -17,7 +17,7 @@ int main(void) {
    }*/
     
     //Tentative de lecture sur un élément
-   string chaine("22");
+   string chaine("1+5*2");
     Automate * a = new Automate();
     a->init();
     cout<<endl;
@@ -25,7 +25,15 @@ int main(void) {
     Lexer l(chaine);
     
     Symbole * s;
-    s=l.Consulter();
+    while(*(s=l.Consulter())!=FIN){
+    s->Affiche();
+    cout<<endl;
+    
+    Etat * etatActuel = a->getEtat();
+    cout<<endl;
+    etatActuel->transition(*a,s);
+     l.Avancer();
+    }
     s->Affiche();
     cout<<endl;
     
@@ -33,6 +41,7 @@ int main(void) {
     cout<<endl;
     etatActuel->transition(*a,s);
     
+    a->Resultat();
     
    return 0;
     

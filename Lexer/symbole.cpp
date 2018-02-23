@@ -21,7 +21,7 @@ Symbole * Symbole::Addition(Symbole * e2){
     int v2 =e2->valeur;
     int v3 = v1+v2;
     //Entier e3 = new Entier(v3);*/
-    return e2;
+    return new Entier(100);
 }
 
 /**
@@ -35,6 +35,6 @@ Symbole * Symbole::Multiplication(Symbole * e2){
     int v2 =e2->valeur;
     int v3 = v1*v2;
     //Entier e3 = new Entier(v3);*/
-    return e2;
+    return new Entier(200);
 }
 

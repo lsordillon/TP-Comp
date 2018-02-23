@@ -10,10 +10,13 @@ void Automate::decalage(Symbole * s, Etat * e){
 	symbolestack.push_back(s);
 	etatstack.push_back(e);
     
-    cout<<"Je modifie les piles"<<endl;
+    //Affichage de controle
+    /*cout<<"Je modifie les piles"<<endl;
     etatstack.back()->Print();
+    cout<<endl;
     symbolestack.back()->Affiche();
-    cout<<"Modification terminée"<<endl;
+    cout<<endl;
+    cout<<"Modification terminée"<<endl;*/
 }
 
 /**
@@ -35,6 +38,14 @@ Symbole * Automate::getAndDestroySymbole (){
     return s;
 }
 
+void Automate::Resultat (){
+    Symbole * s = symbolestack.back();
+    cout<<"Le résultat est :";
+    s->Affiche();
+    cout<<endl;
+
+}
+
 Etat * Automate::getEtat (){
     Etat * e = etatstack.back();
     e->Print();
@@ -48,16 +59,18 @@ Etat * Automate::getEtat (){
 Etat * Automate::getDecalageNonTerminaux(){
     Etat * e = etatstack.back();
     string nom = e->getNom();
-    if (nom.compare("E0")){
+    
+    if (nom=="E0"){
         return new E1();
     }
-    else if (nom.compare("E2")){
+    else if (nom=="E2"){
         return new E6();
     }
-    else if (nom.compare("E4")){
+    else if (nom=="E4"){
         return new E7();
     }
     else{
         return new E8();
     }
+    
 }
