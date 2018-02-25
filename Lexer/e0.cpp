@@ -9,10 +9,15 @@ bool E0::transition(Automate & automate, Symbole * s) {
         case INT :
         automate.decalage(s,new E3);
         break;
+        default :
+            automate.Erreur();
+            break;
+        
 	
-    //cas non terminaux --> E1
+    
     // gestion des cas d'erreur
 	}
+    cout<<"transition E0"<<endl;
 	return false;
 }
 

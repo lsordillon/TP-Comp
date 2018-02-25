@@ -12,7 +12,9 @@ bool E6::transition(Automate & automate, Symbole * s) {
         case CLOSEPAR :
         automate.decalage(s,new E9);
         break;
-        // Gestion des erreurs ? 
+        default :
+            automate.Erreur();
+            break;
 	}
 	return false;
 }

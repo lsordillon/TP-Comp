@@ -3,7 +3,7 @@
 
 bool E8::transition(Automate & automate, Symbole * s) {
     switch (*s){
-        default :
+        case PLUS : case MULT : case CLOSEPAR : case FIN :{
         
             Entier * s1=(Entier*) automate.getAndDestroySymbole();
             automate.destroySymbole();
@@ -15,9 +15,12 @@ bool E8::transition(Automate & automate, Symbole * s) {
             automate.decalage(newS,e);
             e->transition(automate,s);
             break;
+        }
+        default :
+            automate.Erreur();
+            break;
 		
 		
-        // Gestion des erreurs ? 
 	}
 	return false;
 }

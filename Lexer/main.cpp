@@ -4,45 +4,42 @@
 #include "etat.h"
 
 
-int main(void) {
-  /*string chaine("(1+34)*123");
-
-   Lexer l(chaine); 
-
-   Symbole * s;
-   while(*(s=l.Consulter())!=FIN) {
-      s->Affiche();
-      cout<<endl;
-      l.Avancer();
-   }*/
+int main(int i, char * entre [] ) {
+  
     
     //Tentative de lecture sur un élément
-   string chaine("(5+*+2*2)*2");
+   string chaine(entre[1]);
+    //string chaine("(1*1)*(2+3)");
+    
     Automate * a = new Automate();
     a->init();
     cout<<endl;
     
     Lexer l(chaine);
     
-    Symbole * s;
-    while(*(s=l.Consulter())!=FIN){
-    s->Affiche();
-    cout<<endl;
+    Symbole * s=l.Consulter();
     
-    Etat * etatActuel = a->getEtat();
-    cout<<endl;
-    etatActuel->transition(*a,s);
-     l.Avancer();
+    while(*s!=FIN && *s!=ERREUR){
+        s->Affiche();
+        cout<<endl;
+    
+        Etat * etatActuel = a->getEtat();
+        cout<<endl;
+        etatActuel->transition(*a,s);
+        l.Avancer();
+        s=l.Consulter();
+        if(*(a->getSymbole())==ERREUR){
+            s=a->getSymbole();
+        }
     }
     s->Affiche();
     cout<<endl;
     
     Etat * etatActuel = a->getEtat();
-    cout<<endl;
     etatActuel->transition(*a,s);
-    
-    a->Resultat();
-    
+    if(*s!=ERREUR){
+        a->Resultat();
+    }
    return 0;
     
     

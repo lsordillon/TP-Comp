@@ -12,8 +12,10 @@ bool E1::transition(Automate & automate, Symbole * s) {
         case FIN :
             cout<<"TERMINE"<<endl;
             break;
-        //Cas accepter / fin ?
-        // Gestion des erreurs ? 
+        default :
+            automate.Erreur();
+            break;
+         
 	}
 	return false;
 }

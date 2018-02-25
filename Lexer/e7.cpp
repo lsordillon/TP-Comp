@@ -6,7 +6,7 @@ bool E7::transition(Automate & automate, Symbole * s) {
         case MULT :
         automate.decalage(s,new E5);
         break;
-        default :
+        case PLUS : case CLOSEPAR : case FIN :{
             Entier * s1=(Entier*) automate.getAndDestroySymbole();
             automate.destroySymbole();
             Entier * s2=(Entier*) automate.getAndDestroySymbole();
@@ -17,10 +17,13 @@ bool E7::transition(Automate & automate, Symbole * s) {
             automate.decalage(newS,e);
             e->transition(automate,s);
             break;
+        }
+        default :
+            automate.Erreur();
+            break;
 
 		
-        
-        // Gestion des erreurs ? 
+       
 	}
 	return false;
 }

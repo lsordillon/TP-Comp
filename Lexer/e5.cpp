@@ -9,8 +9,9 @@ bool E5::transition(Automate & automate, Symbole * s) {
 		case OPENPAR :
 		automate.decalage(s,new E2);
 		break;
-        
-        // Gestion des erreurs ? 
+        default :
+            automate.Erreur();
+            break;
 	}
 	return false;
 }

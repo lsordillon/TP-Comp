@@ -19,6 +19,10 @@ void Automate::decalage(Symbole * s, Etat * e){
     cout<<"Modification terminée"<<endl;*/
 }
 
+void Automate::Erreur(){
+    symbolestack.push_back(new Symbole (ERREUR));
+}
+
 /**
  *Réalise la fin de la reduction
  *on supprime les n états a supprimer
@@ -50,6 +54,11 @@ Etat * Automate::getEtat (){
     Etat * e = etatstack.back();
     e->Print();
     return e;
+}
+
+Symbole * Automate::getSymbole (){
+    Symbole * s = symbolestack.back();
+    return s;
 }
 
 /**

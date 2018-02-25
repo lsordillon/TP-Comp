@@ -9,8 +9,11 @@ bool E4::transition(Automate & automate, Symbole * s) {
         case OPENPAR :
             automate.decalage(s,new E2);
             break;
+        default :
+            automate.Erreur();
+            break;
             
-            // Gestion des erreurs ?
+            
 		
 	}
 	return false;

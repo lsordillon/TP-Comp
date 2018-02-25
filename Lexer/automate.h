@@ -28,6 +28,8 @@ class Automate {
     void Resultat ();
       Etat * getEtat();
       Etat * getDecalageNonTerminaux();
+    Symbole * getSymbole ();
+    void Erreur();
     
 
    protected:
