@@ -14,7 +14,7 @@ else
 endif
 
 #Nom de l'executable
-EXEC=CaVaMarcher.exe
+EXEC=Analyseur.exe
 
 #Fichiers sources
 SRC=$(wildcard *.cpp ) #prendre tous les fichiers .cpp
@@ -28,14 +28,15 @@ all : $(EXEC)
 
 #Compilation de chaque .cpp
 %.o: %.cpp
-	$(CXX) $^ -o $@ -c $(CXXFLAGS)
+	$(CXX) $^ -o $@ -c $(CXXFLAGS) -std=c++11
 
 #Fabrication de l'executable
-CaVaMarcher.exe : $(OBJ)
+Analyseur.exe : $(OBJ)
 	$(CXX) $^ -o $@ $(LDFLAGS)
 
 clean :
 	rm -rf $(OBJ)
+	rm -rf $(EXEC)
 
 #Creation des dependances
 depend : 

@@ -4,14 +4,16 @@
 bool E3::transition(Automate & automate, Symbole * s) {
 	switch (*s){
             
-            //REALISATION DE LA REDUCTION
+            //REDUCTION
         case PLUS: case MULT : case CLOSEPAR : case FIN :{
-            Symbole * s2=automate.getAndDestroySymbole(); // Je supprime le symbole pour le remettre ensuite dans la pile (dans reduction)
+			
+			// Supprime symbole de la pile avant de rempiler le symbole produit
+            Symbole * s2=automate.getAndDestroySymbole();
             automate.reduction(1);
             
             Etat * e = automate.getDecalageNonTerminaux();
             automate.decalage(s2,e);
-            e->transition(automate,s);// la je suis sceptique sur mes histoires de pointeurs
+            e->transition(automate,s);
             break;
         }
         default :

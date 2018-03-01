@@ -12,9 +12,6 @@ bool E4::transition(Automate & automate, Symbole * s) {
         default :
             automate.Erreur();
             break;
-            
-            
-		
 	}
 	return false;
 }

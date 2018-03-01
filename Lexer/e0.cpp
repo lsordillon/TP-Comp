@@ -12,12 +12,8 @@ bool E0::transition(Automate & automate, Symbole * s) {
         default :
             automate.Erreur();
             break;
-        
-	
-    
-    // gestion des cas d'erreur
+       
 	}
-    cout<<"transition E0"<<endl;
 	return false;
 }
 

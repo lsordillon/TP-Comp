@@ -3,30 +3,19 @@
 
 void Automate::init() {
     etatstack.push_back(new E0);
-    cout<<"Automate créé et init";
+    cout<<"Automate créé et initiatisé a E0"<<endl;
 }
 
 void Automate::decalage(Symbole * s, Etat * e){
 	symbolestack.push_back(s);
 	etatstack.push_back(e);
-    
-    //Affichage de controle
-    /*cout<<"Je modifie les piles"<<endl;
-    etatstack.back()->Print();
-    cout<<endl;
-    symbolestack.back()->Affiche();
-    cout<<endl;
-    cout<<"Modification terminée"<<endl;*/
 }
 
 void Automate::Erreur(){
     symbolestack.push_back(new Symbole (ERREUR));
 }
 
-/**
- *Réalise la fin de la reduction
- *on supprime les n états a supprimer
- */
+
 void Automate::reduction(int n){
     for(int i=0; i<n;i++){
         etatstack.pop_back();
@@ -61,10 +50,6 @@ Symbole * Automate::getSymbole (){
     return s;
 }
 
-/**
- * Dans le cas d'une reduction, pour ne pas tourner en rond, on doit réaliser un decalage correspondant à la colonne Non Terminaux
- *Ce décalage dépend de l'état actuel (apres la suppression necessaire)
- */
 Etat * Automate::getDecalageNonTerminaux(){
     Etat * e = etatstack.back();
     string nom = e->getNom();
